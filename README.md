@@ -4,7 +4,7 @@ Install Docker on your computer. Instructions can be found on the official Docke
 
 1. Clone the project repository to your computer:
 
-    git clone <repository url>
+    git clone git clone https://github.com/tymur1404/parse_file.git
 
 2. Generate the application key:
 
