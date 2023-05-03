@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 class UserController extends Controller
 {
 
-    public function index(FilterRequest $request)
+    public function index(FilterRequest $request): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
 
 
@@ -35,7 +35,7 @@ class UserController extends Controller
     }
 
 
-    public function import(ImportRequest $request)
+    public function import(ImportRequest $request): \Illuminate\Http\RedirectResponse
     {
         $data = $request->validated();
         $file = $request->file('file');
@@ -52,7 +52,7 @@ class UserController extends Controller
 
     }
 
-    public function export(FilterRequest $request)
+    public function export(FilterRequest $request): StreamedResponse
     {
         $data = $request->validated();
         $filter = app()->make(UserFilter::class, ['queryParams' => array_filter($data)]);

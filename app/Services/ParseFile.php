@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class ParseFile
 {
-    public static function readFile($filename, $delimiter=',')
+    public static function readFile($filename, $delimiter=','): \Generator
     {
         $file = fopen($filename, 'r');
         if (!$file) {
@@ -30,7 +30,7 @@ class ParseFile
 
     }
 
-    public static function importUsers($filename, $delimiter=',')
+    public static function importUsers($filename, $delimiter=','): void
     {
         $file = fopen($filename, 'r');
         if (!$file) {
@@ -78,7 +78,7 @@ class ParseFile
 
     }
 
-    public static function exportUsers(UserFilter $filter)
+    public static function exportUsers(UserFilter $filter): StreamedResponse
     {
         $fileName = 'users.csv';
         $headers = [

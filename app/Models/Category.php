@@ -8,7 +8,7 @@ class Category extends Model
 {
     protected $guarded = false;
 
-    public function users()
+    public function users(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(User::class);
     }

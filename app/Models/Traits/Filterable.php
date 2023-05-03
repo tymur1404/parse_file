@@ -12,7 +12,7 @@ trait Filterable
      * @param FilterInterface $filter
      * @return Builder
      */
-    public function scopeFilter(Builder $bulder, FilterInterface $filter)
+    public function scopeFilter(Builder $bulder, FilterInterface $filter): Builder
     {
         $filter->apply($bulder);
 

@@ -33,7 +33,7 @@ class UserFilter extends AbstractFilter
      * @param $value
      * @return void
      */
-    protected function category(Builder $builder, $value)
+    protected function category(Builder $builder, $value): void
     {
         $builder->where('category_id', $value);
     }
@@ -43,7 +43,7 @@ class UserFilter extends AbstractFilter
      * @param $value
      * @return void
      */
-    protected function birthdate(Builder $builder, $value)
+    protected function birthdate(Builder $builder, $value): void
     {
         $builder->where('birthdate', $value);
     }
@@ -53,7 +53,7 @@ class UserFilter extends AbstractFilter
      * @param $value
      * @return void
      */
-    protected function gender(Builder $builder, $value)
+    protected function gender(Builder $builder, $value): void
     {
         $builder->where('gender', $value);
     }
@@ -64,7 +64,7 @@ class UserFilter extends AbstractFilter
      * @param $value
      * @return void
      */
-    protected function age_range(Builder $builder, $value)
+    protected function age_range(Builder $builder, $value): void
     {
         list($age_min, $age_max) = explode(',', $value);
 
@@ -80,7 +80,7 @@ class UserFilter extends AbstractFilter
      * @param $value
      * @return void
      */
-    protected function age(Builder $builder, $value)
+    protected function age(Builder $builder, $value): void
     {
         $currentDate = Carbon::now();
         $date_from = $currentDate->copy()->subYears($value)->startOfYear();
